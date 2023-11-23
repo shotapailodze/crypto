@@ -12,16 +12,41 @@ import { doc, setDoc } from "firebase/firestore";
 const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+
   const signUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password);
-    return setDoc(db, 'users', email) {
-        watchlist: []
-    }
+    return (
+      setDoc(db, "users", email),
+      {
+        watchlist: [],
+      }
+    );
   };
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const logout = () => {
+    return signOut(auth);
+  };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  return (
+    <UserContext.Provider value={{ signUp, signIn, logout, user }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-const AuthContext = () => {
-  return <div>AuthContext</div>;
+export const UserAuth = () => {
+  return useContext(UserContext);
 };
-
-export default AuthContext;
