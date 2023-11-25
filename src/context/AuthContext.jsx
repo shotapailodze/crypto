@@ -16,12 +16,9 @@ export const AuthContextProvider = ({ children }) => {
 
   const signUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password);
-    return (
-      setDoc(db, "users", email),
-      {
-        watchlist: [],
-      }
-    );
+    return setDoc(doc(db, "users", email), {
+      watchList: [],
+    });
   };
   const signIn = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
