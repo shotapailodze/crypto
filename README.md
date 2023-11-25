@@ -1,8 +1,10 @@
-# React + Vite
+# This build uses a lot React Hooks, Context, React-Router-Dom, useParams, Light/Dark Theme, Tailwind, Authentication, Firebase, API, Hosting and more!
+# [Live View](https://cryptobase-2e0e7.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![image](https://github.com/shotapailodze/crypto/assets/55694002/6fa359b8-6538-4ac1-9caf-6912cf78f01f)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/shotapailodze/crypto/assets/55694002/e1aa5ec7-a603-48eb-bf4a-80013169c839)
+
+![image](https://github.com/shotapailodze/crypto/assets/55694002/73e6117b-3134-449b-8377-b6937d6b80d1)
+
